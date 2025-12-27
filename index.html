@@ -102,6 +102,17 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
         }
 
+        .iit-highlight {
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            display: inline-block;
+            margin-top: 2px;
+        }
+
         nav {
             display: flex;
             flex-wrap: wrap;
@@ -191,21 +202,21 @@
             align-items: center;
             justify-content: flex-start;
             height: 100%;
-            padding-top: 100px;
-            opacity: 0.2;
+            padding-top: 80px;
+            opacity: 0.35;
             pointer-events: none;
             position: sticky;
             top: 20px;
         }
 
         .decorative-divider svg {
-            width: 48px;
-            height: 48px;
+            width: 42px;
+            height: 42px;
             fill: none;
             stroke: var(--text-main);
             stroke-width: 1.2;
             filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.05));
-            margin-bottom: 250px;
+            margin-bottom: 120px;
         }
 
         .sidebar {
@@ -498,7 +509,8 @@
                     <img src="profile.jpg" alt="Kummetha Sai Charan" class="profile-image">
                     <div class="name-block">
                         <h1>Kummetha Sai Charan</h1>
-                        <p>Product Manager · AI Platforms & Automation · IIT Kharagpur</p>
+                        <p>Product Manager · AI Platforms & Automation · <span class="iit-highlight">IIT
+                                Kharagpur</span></p>
                     </div>
                 </div>
                 <nav>
@@ -848,6 +860,28 @@
                         stroke="currentColor" />
                 </svg>
 
+                <!-- CPU / Processor -->
+                <svg viewBox="0 0 100 100" title="Processor">
+                    <rect x="25" y="25" width="50" height="50" stroke="currentColor" />
+                    <rect x="35" y="35" width="30" height="30" stroke="currentColor" opacity="0.6" />
+                    <line x1="25" y1="35" x2="15" y2="35" stroke="currentColor" />
+                    <line x1="25" y1="45" x2="15" y2="45" stroke="currentColor" />
+                    <line x1="25" y1="55" x2="15" y2="55" stroke="currentColor" />
+                    <line x1="25" y1="65" x2="15" y2="65" stroke="currentColor" />
+                    <line x1="75" y1="35" x2="85" y2="35" stroke="currentColor" />
+                    <line x1="75" y1="45" x2="85" y2="45" stroke="currentColor" />
+                    <line x1="75" y1="55" x2="85" y2="55" stroke="currentColor" />
+                    <line x1="75" y1="65" x2="85" y2="65" stroke="currentColor" />
+                    <line x1="35" y1="25" x2="35" y2="15" stroke="currentColor" />
+                    <line x1="45" y1="25" x2="45" y2="15" stroke="currentColor" />
+                    <line x1="55" y1="25" x2="55" y2="15" stroke="currentColor" />
+                    <line x1="65" y1="25" x2="65" y2="15" stroke="currentColor" />
+                    <line x1="35" y1="75" x2="35" y2="85" stroke="currentColor" />
+                    <line x1="45" y1="75" x2="45" y2="85" stroke="currentColor" />
+                    <line x1="55" y1="75" x2="55" y2="85" stroke="currentColor" />
+                    <line x1="65" y1="75" x2="65" y2="85" stroke="currentColor" />
+                </svg>
+
                 <!-- Architecture SVG (Blueprint style) -->
                 <svg viewBox="0 0 100 100" title="Architecture">
                     <rect x="20" y="40" width="60" height="45" stroke="currentColor" />
@@ -857,11 +891,31 @@
                     <line x1="10" y1="15" x2="10" y2="85" stroke="currentColor" stroke-dasharray="2,2" />
                 </svg>
 
+                <!-- Database / Data foundations -->
+                <svg viewBox="0 0 100 100" title="Database">
+                    <ellipse cx="50" cy="25" rx="30" ry="12" stroke="currentColor" />
+                    <path d="M20 25 v50 c0 12 60 12 60 0 v-50" stroke="currentColor" />
+                    <path d="M20 50 c0 12 60 12 60 0" stroke="currentColor" />
+                    </ellipse>
+                </svg>
+
+                <!-- AI Pulse / Waves -->
+                <svg viewBox="0 0 100 100" title="AI Pulse">
+                    <path d="M10 50 L30 50 L40 20 L55 80 L65 40 L75 50 L90 50" stroke="currentColor" />
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-dasharray="4,4" opacity="0.3" />
+                </svg>
+
                 <!-- Rocket SVG -->
                 <svg viewBox="0 0 100 100" title="Rocket">
                     <path d="M50 10 C35 30 35 60 40 80 L60 80 C65 60 65 30 50 10" stroke="currentColor" />
                     <path d="M40 80 L30 90 L40 85 M60 80 L70 90 L60 85" stroke="currentColor" />
                     <circle cx="50" cy="40" r="4" stroke="currentColor" />
+                </svg>
+
+                <!-- Cloud / Orchestration -->
+                <svg viewBox="0 0 100 100" title="Cloud">
+                    <path d="M25 65 a15 15 0 0 1 0 -30 a20 20 0 0 1 35 -10 a20 20 0 0 1 25 10 a15 15 0 0 1 0 30 z"
+                        stroke="currentColor" />
                 </svg>
             </div>
 
