@@ -176,7 +176,7 @@
 
         .main-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 2.5fr 1fr;
             gap: 16px;
             align-items: start;
         }
@@ -877,9 +877,42 @@
 
     </div>
 
-    <!-- Sidebar: Skills, Education, Blog, Highlights -->
+    <!-- Sidebar: Education, Skills, Highlights -->
+    <!-- Sidebar: Education, Skills, Highlights -->
     <div class="sidebar">
-        <div class="card" id="skills">
+        <div class="card" id="education">
+            <h2>Education</h2>
+            <div class="edu-item">
+                <div class="edu-main">Indian Institute of Technology Kharagpur</div>
+                <div class="edu-line academic-title">Bachelor's (Honours), Architecture · 2016 – 2021</div>
+                <div class="edu-line">
+                    <strong>Thesis:</strong> Acoustic-optimized spaces for performing arts using computational design
+                    and acoustic simulation; recognised among the top theses.
+                </div>
+                <div class="exp-tags" style="margin-top: 8px;">
+                    <span>Leadership</span>
+                    <span>AI</span>
+                    <span>Computational Design</span>
+                    <span>Architectural Design</span>
+                </div>
+            </div>
+
+            <div class="edu-item section-spacer-sm"
+                style="margin-top: 16px; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+                <div class="edu-main">Narayana Institute</div>
+                <div class="edu-line academic-title">Intermediate (MPC) · 2014 – 2016</div>
+                <div class="edu-line">Board of Intermediate Education Telangana · Grade: 97%</div>
+            </div>
+
+            <div class="edu-item section-spacer-sm"
+                style="margin-top: 12px; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+                <div class="edu-main">Dr KKR Gowtham International School</div>
+                <div class="edu-line academic-title">Secondary Education · 2014</div>
+                <div class="edu-line">Grade: 9.7/10 · Athletics | Sports | Dance</div>
+            </div>
+        </div>
+
+        <div class="card section-spacer" id="skills">
             <h2>Skills</h2>
             <div class="skill-block">
                 <strong>Product</strong><br />
@@ -903,27 +936,12 @@
             </div>
         </div>
 
-        <div class="card section-spacer">
-            <h2>Education</h2>
-            <div class="edu-main">
-                Bachelors (Honours), Architecture
-            </div>
-            <div class="edu-line">
-                Indian Institute of Technology Kharagpur · 2021
-            </div>
-            <div class="edu-line">
-                Undergrad thesis: acoustic-optimized spaces for performing arts using computational design
-                and acoustic simulation principles; recognised as one of the top theses in the cohort.
-            </div>
-        </div>
-
         <div class="card section-spacer" id="achievements">
             <h2>Highlights</h2>
             <ul class="side-list">
                 <li>
                     Excellence Award at Vegrow for building a scalable GenAI-powered NPS AI calling platform
-                    that
-                    reduced operational costs by ~35%.
+                    that reduced operational costs by ~35%.
                 </li>
                 <li>
                     Invited to the Google Foobar Challenge for technical excellence and algorithmic problem
@@ -934,12 +952,10 @@
                 </li>
                 <li>
                     Organised a company-wide Hackathon at Vegrow with ~95% participation to foster a culture
-                    of
-                    innovation and experimentation.
+                    of innovation and experimentation.
                 </li>
             </ul>
         </div>
-
     </div>
     </div>
     </main>
