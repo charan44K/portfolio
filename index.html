@@ -177,9 +177,21 @@
         }
 
         .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .experience-section {
             display: flex;
             flex-direction: column;
             gap: 18px;
+        }
+
+        .blog-section {
+            position: sticky;
+            top: 90px;
         }
 
         .sidebar {
@@ -191,6 +203,14 @@
         @media (max-width: 1024px) {
             main {
                 grid-template-columns: minmax(0, 1fr);
+            }
+
+            .main-content {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .blog-section {
+                position: static;
             }
 
             .sidebar {
@@ -486,292 +506,377 @@
         </header>
 
         <main>
-            <!-- Main Content: Summary + Experience -->
+            <!-- Main Content: Summary + Experience + Blog -->
             <div class="main-content">
-                <div class="card" id="summary">
-                    <h2>Summary</h2>
-                    <p class="summary-text">
-                        AI Platform Product Manager with 4.5+ years building agentic voice applications, LLM
-                        orchestration pipelines
-                        (STT → LLM → TTS), PromptOps platforms, evaluation frameworks, B2B SaaS and marketplace
-                        products.
-                        Combines deep engineering expertise with product execution to ship reliable, scalable
-                        applications with
-                        measurable business impact.
-                    </p>
-                    <div class="pill-row">
-                        <span class="pill">AI Voice Agents</span>
-                        <span class="pill">LLM Orchestration</span>
-                        <span class="pill">Agentic Workflows</span>
-                        <span class="pill">PromptOps Platforms</span>
-                        <span class="pill">B2B Marketplaces</span>
-                        <span class="pill">P2P Finance Systems</span>
-                    </div>
-                    <div class="highlight">
-                        Currently leading AI product strategy and execution at Vegrow across voice intelligence, supply
-                        &amp; sales
-                        intelligence, and finance systems.
-                    </div>
-                </div>
-
-                <div class="card section-spacer" id="experience">
-                    <h2>Experience</h2>
-
-                    <!-- PM – AI & Automation -->
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-title">Product Manager – AI &amp; Automation · Vegrow</div>
-                                <div class="exp-meta">Bengaluru, India · Jul 2024 – Present</div>
-                            </div>
+                <!-- Left: Summary + Experience -->
+                <div class="experience-section">
+                    <div class="card" id="summary">
+                        <h2>Summary</h2>
+                        <p class="summary-text">
+                            AI Platform Product Manager with 4.5+ years building agentic voice applications, LLM
+                            orchestration pipelines
+                            (STT → LLM → TTS), PromptOps platforms, evaluation frameworks, B2B SaaS and marketplace
+                            products.
+                            Combines deep engineering expertise with product execution to ship reliable, scalable
+                            applications with
+                            measurable business impact.
+                        </p>
+                        <div class="pill-row">
+                            <span class="pill">AI Voice Agents</span>
+                            <span class="pill">LLM Orchestration</span>
+                            <span class="pill">Agentic Workflows</span>
+                            <span class="pill">PromptOps Platforms</span>
+                            <span class="pill">B2B Marketplaces</span>
+                            <span class="pill">P2P Finance Systems</span>
                         </div>
-                        <div class="exp-tags">
-                            <span>AI Voice Platform</span>
-                            <span>Agentic Calling</span>
-                            <span>STT → LLM → TTS</span>
-                            <span>API-first</span>
+                        <div class="highlight">
+                            Currently leading AI product strategy and execution at Vegrow across voice intelligence,
+                            supply
+                            &amp; sales
+                            intelligence, and finance systems.
                         </div>
-                        <ul class="exp-points">
-                            <li>
-                                Built and scaled an agentic voice platform (VG Voice) powering profiling, NPS, slot
-                                booking, and ops workflows;
-                                automated 30K+ calls/month, reduced cost per completed workflow by ~60% and increased
-                                scale 4×.
-                            </li>
-                            <li>
-                                Owned the full AI product loop: persona &amp; prompt design → fallbacks → knowledge base
-                                → tool/function calling
-                                → post-processing → dashboards → retraining signals.
-                            </li>
-                            <li>
-                                Developed an API-first platform to integrate with multiple products (CRM, LMS, ERPs)
-                                across diverse use cases.
-                            </li>
-                            <li>
-                                Architected real-time STT → LLM → TTS orchestration with streaming and interruption
-                                handling; achieved &lt;1.5s
-                                median response latency with clearer A/B-tested prompt variants, structured
-                                disambiguation, and interruption
-                                recovery, lifting workflow completion from 40% → 65%.
-                            </li>
-                            <li>
-                                Improved feedback outcomes: increased NPS from 30% → 65% using structured voice
-                                feedback, auto-summaries,
-                                sentiment tagging, issue categorisation, and streamlined reporting with closed-loop
-                                ownership to reduce churn.
-                            </li>
-                            <li>
-                                Defined AI-specific north stars: funnel visibility, completion rate, extraction
-                                accuracy, latency, cost/call,
-                                transfer-to-human, repeat-call rate and satisfaction rate.
-                            </li>
-                            <li>
-                                Integrated multi-agent evaluation into CI/CD as a release gate to prevent regressions in
-                                extraction quality, UX,
-                                and latency before deployment.
-                            </li>
-                        </ul>
                     </div>
 
-                    <!-- PromptOps + Sales Intelligence + Integrations -->
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-title">PromptOps Engine, Sales Intelligence &amp; Integrations · Vegrow
+                    <div class="card section-spacer" id="experience">
+                        <h2>Experience</h2>
+
+                        <!-- PM – AI & Automation -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Product Manager – AI &amp; Automation · Vegrow</div>
+                                    <div class="exp-meta">Bengaluru, India · Jul 2024 – Present</div>
                                 </div>
-                                <div class="exp-meta">Product Manager – AI Platforms</div>
                             </div>
+                            <div class="exp-tags">
+                                <span>AI Voice Platform</span>
+                                <span>Agentic Calling</span>
+                                <span>STT → LLM → TTS</span>
+                                <span>API-first</span>
+                            </div>
+                            <ul class="exp-points">
+                                <li>
+                                    Built and scaled an agentic voice platform (VG Voice) powering profiling, NPS, slot
+                                    booking, and ops workflows;
+                                    automated 30K+ calls/month, reduced cost per completed workflow by ~60% and
+                                    increased
+                                    scale 4×.
+                                </li>
+                                <li>
+                                    Owned the full AI product loop: persona &amp; prompt design → fallbacks → knowledge
+                                    base
+                                    → tool/function calling
+                                    → post-processing → dashboards → retraining signals.
+                                </li>
+                                <li>
+                                    Developed an API-first platform to integrate with multiple products (CRM, LMS, ERPs)
+                                    across diverse use cases.
+                                </li>
+                                <li>
+                                    Architected real-time STT → LLM → TTS orchestration with streaming and interruption
+                                    handling; achieved &lt;1.5s
+                                    median response latency with clearer A/B-tested prompt variants, structured
+                                    disambiguation, and interruption
+                                    recovery, lifting workflow completion from 40% → 65%.
+                                </li>
+                                <li>
+                                    Improved feedback outcomes: increased NPS from 30% → 65% using structured voice
+                                    feedback, auto-summaries,
+                                    sentiment tagging, issue categorisation, and streamlined reporting with closed-loop
+                                    ownership to reduce churn.
+                                </li>
+                                <li>
+                                    Defined AI-specific north stars: funnel visibility, completion rate, extraction
+                                    accuracy, latency, cost/call,
+                                    transfer-to-human, repeat-call rate and satisfaction rate.
+                                </li>
+                                <li>
+                                    Integrated multi-agent evaluation into CI/CD as a release gate to prevent
+                                    regressions in
+                                    extraction quality, UX,
+                                    and latency before deployment.
+                                </li>
+                            </ul>
                         </div>
-                        <div class="exp-tags">
-                            <span>PromptOps</span>
-                            <span>Eval Frameworks</span>
-                            <span>Sales Intelligence</span>
-                            <span>Integrations</span>
-                        </div>
-                        <ul class="exp-points">
-                            <li>
-                                Built a centralized PromptOps system used across 5 GenAI applications (templates,
-                                variables, versioning,
-                                safe rollout mechanics); reduced iteration and deployment cycle time by ~2×.
-                            </li>
-                            <li>
-                                Launched AI-driven sales pitch intelligence to automate scoring and coaching; reduced
-                                manual QA effort by ~90%
-                                and improved conversion predictability.
-                            </li>
-                            <li>
-                                Shipped multiple business-critical integrations (telephony, finance, internal systems)
-                                with API-first design:
-                                authentication, webhooks/events, retries, queuing and observability.
-                            </li>
-                        </ul>
-                    </div>
 
-                    <!-- P2P Finance -->
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-title">Procure-to-Pay (P2P) – Business Finance Product · Vegrow</div>
-                                <div class="exp-meta">Product &amp; Tech Lead</div>
+                        <!-- PromptOps + Sales Intelligence + Integrations -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">PromptOps Engine, Sales Intelligence &amp; Integrations ·
+                                        Vegrow
+                                    </div>
+                                    <div class="exp-meta">Product Manager – AI Platforms</div>
+                                </div>
                             </div>
+                            <div class="exp-tags">
+                                <span>PromptOps</span>
+                                <span>Eval Frameworks</span>
+                                <span>Sales Intelligence</span>
+                                <span>Integrations</span>
+                            </div>
+                            <ul class="exp-points">
+                                <li>
+                                    Built a centralized PromptOps system used across 5 GenAI applications (templates,
+                                    variables, versioning,
+                                    safe rollout mechanics); reduced iteration and deployment cycle time by ~2×.
+                                </li>
+                                <li>
+                                    Launched AI-driven sales pitch intelligence to automate scoring and coaching;
+                                    reduced
+                                    manual QA effort by ~90%
+                                    and improved conversion predictability.
+                                </li>
+                                <li>
+                                    Shipped multiple business-critical integrations (telephony, finance, internal
+                                    systems)
+                                    with API-first design:
+                                    authentication, webhooks/events, retries, queuing and observability.
+                                </li>
+                            </ul>
                         </div>
-                        <div class="exp-tags">
-                            <span>P2P Workflow</span>
-                            <span>Finance Automation</span>
-                        </div>
-                        <ul class="exp-points">
-                            <li>
-                                Defined product scope for PR → PO → GRN → Invoice → Payments workflows; led a 5-day MVP
-                                build.
-                            </li>
-                            <li>
-                                Enabled ₹6 Cr+/month processing with automated workflows, reducing approval turnaround
-                                by ~40% and reducing
-                                financial leakage by ~7.5% via matching, validations and automated syncs to finance
-                                auditing tools.
-                            </li>
-                        </ul>
-                    </div>
 
-                    <!-- B2B Marketplace (FxS) -->
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-title">Vegrow FxS – B2B Marketplace Product · Vegrow</div>
-                                <div class="exp-meta">Product &amp; Tech Lead</div>
+                        <!-- P2P Finance -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Procure-to-Pay (P2P) – Business Finance Product · Vegrow
+                                    </div>
+                                    <div class="exp-meta">Product &amp; Tech Lead</div>
+                                </div>
                             </div>
+                            <div class="exp-tags">
+                                <span>P2P Workflow</span>
+                                <span>Finance Automation</span>
+                            </div>
+                            <ul class="exp-points">
+                                <li>
+                                    Defined product scope for PR → PO → GRN → Invoice → Payments workflows; led a 5-day
+                                    MVP
+                                    build.
+                                </li>
+                                <li>
+                                    Enabled ₹6 Cr+/month processing with automated workflows, reducing approval
+                                    turnaround
+                                    by ~40% and reducing
+                                    financial leakage by ~7.5% via matching, validations and automated syncs to finance
+                                    auditing tools.
+                                </li>
+                            </ul>
                         </div>
-                        <div class="exp-tags">
-                            <span>B2B Marketplace</span>
-                            <span>Ops Workflows</span>
-                            <span>OCR</span>
-                        </div>
-                        <ul class="exp-points">
-                            <li>
-                                Strategized and led a B2B marketplace workflow product that reduced operational friction
-                                and enabled scale to
-                                ₹70 Cr+ GMV, improving end-to-end visibility and accelerating supplier payments.
-                            </li>
-                            <li>
-                                Deployed LLM-based OCR for handwritten slips (~70% accuracy) to auto-populate records,
-                                boosting speed and
-                                reducing errors during peak operations; improved field execution by ~2.5× while avoiding
-                                linear headcount growth.
-                            </li>
-                        </ul>
-                    </div>
 
-                    <!-- DQR -->
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-title">Digital Quality Reports (DQR) · Vegrow</div>
-                                <div class="exp-meta">Product &amp; Tech Lead</div>
+                        <!-- B2B Marketplace (FxS) -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Vegrow FxS – B2B Marketplace Product · Vegrow</div>
+                                    <div class="exp-meta">Product &amp; Tech Lead</div>
+                                </div>
                             </div>
+                            <div class="exp-tags">
+                                <span>B2B Marketplace</span>
+                                <span>Ops Workflows</span>
+                                <span>OCR</span>
+                            </div>
+                            <ul class="exp-points">
+                                <li>
+                                    Strategized and led a B2B marketplace workflow product that reduced operational
+                                    friction
+                                    and enabled scale to
+                                    ₹70 Cr+ GMV, improving end-to-end visibility and accelerating supplier payments.
+                                </li>
+                                <li>
+                                    Deployed LLM-based OCR for handwritten slips (~70% accuracy) to auto-populate
+                                    records,
+                                    boosting speed and
+                                    reducing errors during peak operations; improved field execution by ~2.5× while
+                                    avoiding
+                                    linear headcount growth.
+                                </li>
+                            </ul>
                         </div>
-                        <div class="exp-tags">
-                            <span>Quality Workflows</span>
-                            <span>Data Foundations</span>
-                        </div>
-                        <ul class="exp-points">
-                            <li>
-                                Designed and launched a scalable quality assessment workflow product, enabling
-                                structured data capture and better
-                                customer-quality matching across 50+ SKUs; reduced operational effort by 1,000+
-                                man-hours/month through
-                                standardized flows and role-based review.
-                            </li>
-                            <li>
-                                Increased defect traceability via standardized tagging and metadata schema, creating a
-                                high-quality dataset that
-                                now powers computer vision–based defect detection (pilot).
-                            </li>
-                        </ul>
-                    </div>
 
-                    <!-- SDE-II Vegrow -->
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-title">SDE-II (Tech Lead) · Vegrow</div>
-                                <div class="exp-meta">Bengaluru, India · Oct 2022 – Jun 2024</div>
+                        <!-- DQR -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Digital Quality Reports (DQR) · Vegrow</div>
+                                    <div class="exp-meta">Product &amp; Tech Lead</div>
+                                </div>
                             </div>
+                            <div class="exp-tags">
+                                <span>Quality Workflows</span>
+                                <span>Data Foundations</span>
+                            </div>
+                            <ul class="exp-points">
+                                <li>
+                                    Designed and launched a scalable quality assessment workflow product, enabling
+                                    structured data capture and better
+                                    customer-quality matching across 50+ SKUs; reduced operational effort by 1,000+
+                                    man-hours/month through
+                                    standardized flows and role-based review.
+                                </li>
+                                <li>
+                                    Increased defect traceability via standardized tagging and metadata schema, creating
+                                    a
+                                    high-quality dataset that
+                                    now powers computer vision–based defect detection (pilot).
+                                </li>
+                            </ul>
                         </div>
-                        <div class="exp-tags">
-                            <span>Golang</span>
-                            <span>Kafka</span>
-                            <span>Inventory Microservices</span>
-                        </div>
-                        <ul class="exp-points">
-                            <li>
-                                Progressed from SDE-I to leading an 8-member team during Vegrow’s scale-up from ₹100 Cr
-                                → ₹500 Cr+ revenue,
-                                contributing to both core tech and team leadership.
-                            </li>
-                            <li>
-                                Led development of inventory traceability microservices using Golang, Kafka, MongoDB,
-                                and QR-based flows for
-                                perishable goods tracking at scale; mentored engineers and championed a quality-focused
-                                culture.
-                            </li>
-                            <li>
-                                Shipped event-driven systems with strong reliability patterns (idempotency, retries,
-                                DLQs, observability) to
-                                support hypergrowth.
-                            </li>
-                            <li>
-                                Built core platform services (auth/OTP, inventory state transitions, integrations,
-                                Computer Vision) and improved
-                                operational robustness through monitoring and incident hygiene.
-                            </li>
-                        </ul>
-                    </div>
 
-                    <!-- LivSYT -->
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-title">Software Engineer · LivSYT</div>
-                                <div class="exp-meta">Hyderabad, India · May 2021 – Oct 2022</div>
+                        <!-- SDE-II Vegrow -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">SDE-II (Tech Lead) · Vegrow</div>
+                                    <div class="exp-meta">Bengaluru, India · Oct 2022 – Jun 2024</div>
+                                </div>
                             </div>
+                            <div class="exp-tags">
+                                <span>Golang</span>
+                                <span>Kafka</span>
+                                <span>Inventory Microservices</span>
+                            </div>
+                            <ul class="exp-points">
+                                <li>
+                                    Progressed from SDE-I to leading an 8-member team during Vegrow’s scale-up from ₹100
+                                    Cr
+                                    → ₹500 Cr+ revenue,
+                                    contributing to both core tech and team leadership.
+                                </li>
+                                <li>
+                                    Led development of inventory traceability microservices using Golang, Kafka,
+                                    MongoDB,
+                                    and QR-based flows for
+                                    perishable goods tracking at scale; mentored engineers and championed a
+                                    quality-focused
+                                    culture.
+                                </li>
+                                <li>
+                                    Shipped event-driven systems with strong reliability patterns (idempotency, retries,
+                                    DLQs, observability) to
+                                    support hypergrowth.
+                                </li>
+                                <li>
+                                    Built core platform services (auth/OTP, inventory state transitions, integrations,
+                                    Computer Vision) and improved
+                                    operational robustness through monitoring and incident hygiene.
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="exp-points">
-                            <li>
-                                Helped scale the project management SaaS from 0 → $0.5M annual revenue by building
-                                robust backend systems and
-                                manufacturing workflows serving customers across India, USA &amp; Singapore.
-                            </li>
-                            <li>
-                                Designed event-driven notifications (AWS CloudWatch, Lambda, SES) to boost engagement
-                                and implemented RBAC/auditing
-                                in PostgreSQL to strengthen data integrity.
-                            </li>
-                        </ul>
-                    </div>
 
-                    <!-- Arth Internship -->
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-title">Computational Design Intern · Arth Design Build</div>
-                                <div class="exp-meta">Hyderabad, India · Jan 2020 – Jun 2020</div>
+                        <!-- LivSYT -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Software Engineer · LivSYT</div>
+                                    <div class="exp-meta">Hyderabad, India · May 2021 – Oct 2022</div>
+                                </div>
                             </div>
+                            <ul class="exp-points">
+                                <li>
+                                    Helped scale the project management SaaS from 0 → $0.5M annual revenue by building
+                                    robust backend systems and
+                                    manufacturing workflows serving customers across India, USA &amp; Singapore.
+                                </li>
+                                <li>
+                                    Designed event-driven notifications (AWS CloudWatch, Lambda, SES) to boost
+                                    engagement
+                                    and implemented RBAC/auditing
+                                    in PostgreSQL to strengthen data integrity.
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="exp-points">
-                            <li>
-                                Worked in the R&amp;D team on computational design automation tools using generative
-                                design and multi-objective
-                                optimization (genetic algorithms) to create data-driven layouts.
-                            </li>
-                            <li>
-                                Demonstrated client-facing prototypes showcasing computational design’s potential for
-                                scalable, efficient project
-                                planning.
-                            </li>
-                        </ul>
+
+                        <!-- Arth Internship -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Computational Design Intern · Arth Design Build</div>
+                                    <div class="exp-meta">Hyderabad, India · Jan 2020 – Jun 2020</div>
+                                </div>
+                            </div>
+                            <ul class="exp-points">
+                                <li>
+                                    Worked in the R&amp;D team on computational design automation tools using generative
+                                    design and multi-objective
+                                    optimization (genetic algorithms) to create data-driven layouts.
+                                </li>
+                                <li>
+                                    Demonstrated client-facing prototypes showcasing computational design’s potential
+                                    for
+                                    scalable, efficient project
+                                    planning.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Right: Blog Section -->
+            <div class="blog-section">
+                <div class="card" id="blog">
+                    <h2>Featured Writing</h2>
+                    <div class="blog-grid" style="display: flex; flex-direction: column; overflow-x: visible;">
+                        <a href="https://medium.com/design-bootcamp/from-ui-to-agentic-ux-how-ai-agents-are-redefining-saas-experiences-bcc8e24751d2"
+                            target="_blank" rel="noreferrer" class="blog-card">
+                            <div class="blog-title">From UI to Agentic UX: How AI Agents Are Redefining SaaS
+                            </div>
+                            <div class="blog-excerpt">
+                                Exploring how AI agents are transforming traditional user interfaces into intelligent,
+                                autonomous experiences.
+                            </div>
+                            <div class="blog-meta">
+                                <span>📝 6 min</span>
+                                <span>·</span>
+                                <span>AI & UX</span>
+                            </div>
+                        </a>
+
+                        <a href="https://medium.com/p/97aa3716ef65" target="_blank" rel="noreferrer" class="blog-card">
+                            <div class="blog-title">The Sociology of Individual Character</div>
+                            <div class="blog-excerpt">
+                                How society shapes our decisions and aspirations through cultural norms and social
+                                structures.
+                            </div>
+                            <div class="blog-meta">
+                                <span>📝 7 min</span>
+                                <span>·</span>
+                                <span>Philosophy</span>
+                            </div>
+                        </a>
+
+                        <a href="https://saicharankummetha.medium.com/architectural-design-thesis-performing-arts-centre-amaravati-459b121ab08d"
+                            target="_blank" rel="noreferrer" class="blog-card">
+                            <div class="blog-title">Architectural Design: Performing Arts Centre</div>
+                            <div class="blog-excerpt">
+                                Thesis on acoustic-optimized spaces using computational design and simulation
+                                principles.
+                            </div>
+                            <div class="blog-meta">
+                                <span>📝 10 min</span>
+                                <span>·</span>
+                                <span>Architecture</span>
+                            </div>
+                        </a>
+
+                        <a href="https://medium.com/p/aad96470e5d9" target="_blank" rel="noreferrer" class="blog-card">
+                            <div class="blog-title">More Insights</div>
+                            <div class="blog-excerpt">
+                                Additional perspectives on product, technology, and innovation.
+                            </div>
+                            <div class="blog-meta">
+                                <span>📝 5 min</span>
+                                <span>·</span>
+                                <span>Product</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
     </div>
 
     <!-- Sidebar: Skills, Education, Blog, Highlights -->
@@ -837,72 +942,6 @@
             </ul>
         </div>
 
-        <div class="card section-spacer" id="blog">
-            <h2>Featured Writing</h2>
-            <div class="blog-grid">
-                <a href="https://medium.com/design-bootcamp/from-ui-to-agentic-ux-how-ai-agents-are-redefining-saas-experiences-bcc8e24751d2"
-                    target="_blank" rel="noreferrer" class="blog-card">
-                    <div class="blog-title">From UI to Agentic UX: How AI Agents Are Redefining SaaS
-                        Experiences
-                    </div>
-                    <div class="blog-excerpt">
-                        Exploring how AI agents are transforming traditional user interfaces into
-                        intelligent,
-                        autonomous experiences in modern SaaS applications.
-                    </div>
-                    <div class="blog-meta">
-                        <span>📝 6 min read</span>
-                        <span>·</span>
-                        <span>AI & UX</span>
-                    </div>
-                </a>
-
-                <a href="https://saicharankummetha.medium.com/exploring-otp-service-implementation-with-golang-a-system-design-overview-02a53b11d08c"
-                    target="_blank" rel="noreferrer" class="blog-card">
-                    <div class="blog-title">Exploring OTP Service Implementation with Golang: A System
-                        Design
-                        Overview</div>
-                    <div class="blog-excerpt">
-                        Deep dive into building a scalable OTP service using Golang, covering architecture,
-                        security considerations, and implementation patterns.
-                    </div>
-                    <div class="blog-meta">
-                        <span>📝 8 min read</span>
-                        <span>·</span>
-                        <span>System Design</span>
-                    </div>
-                </a>
-
-                <a href="https://blog.startupstash.com/experience-vs-data-the-new-moat-for-startups-b030a3093272"
-                    target="_blank" rel="noreferrer" class="blog-card">
-                    <div class="blog-title">Experience vs Data: The New Moat for Startups</div>
-                    <div class="blog-excerpt">
-                        Why exceptional user experience combined with proprietary data creates the strongest
-                        competitive advantage for modern startups.
-                    </div>
-                    <div class="blog-meta">
-                        <span>📝 5 min read</span>
-                        <span>·</span>
-                        <span>Product Strategy</span>
-                    </div>
-                </a>
-
-                <a href="https://saicharankummetha.medium.com/be-a-leader-essential-traits-for-thriving-based-on-my-experiences-8fda8d2e3f33"
-                    target="_blank" rel="noreferrer" class="blog-card">
-                    <div class="blog-title">Be a Leader: Essential Traits for Thriving</div>
-                    <div class="blog-excerpt">
-                        Personal reflections on leadership qualities that drive success, based on
-                        experiences
-                        leading engineering and product teams.
-                    </div>
-                    <div class="blog-meta">
-                        <span>📝 6 min read</span>
-                        <span>·</span>
-                        <span>Leadership</span>
-                    </div>
-                </a>
-            </div>
-        </div>
     </div>
     </div>
     </main>
