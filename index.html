@@ -9,11 +9,17 @@
         :root {
             --bg: #f5f5f7;
             --card: #ffffff;
-            --text-main: #111827;
+            --text-main: #1f2937;
             --text-muted: #6b7280;
+            --text-light: #9ca3af;
             --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-soft: #eff6ff;
             --border-subtle: #e5e7eb;
-            --radius-lg: 18px;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
         }
 
         * {
@@ -22,66 +28,90 @@
 
         body {
             margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top left, #e0ecff 0, #f9fafb 45%, #f5f5f7 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: radial-gradient(ellipse at top left, #dbeafe 0%, #f9fafb 40%, #f5f5f7 100%);
             color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
         }
 
         .page {
-            max-width: 960px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 24px 16px 40px;
         }
 
         header {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-lg);
-            padding: 20px 20px 18px;
-            border: 1px solid var(--border-subtle);
-            backdrop-filter: blur(10px);
+            padding: 20px 24px 18px;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
             position: sticky;
             top: 12px;
             z-index: 10;
+            transition: box-shadow 0.2s ease;
         }
 
         .top-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
         }
 
         .name-block h1 {
-            font-size: 1.7rem;
+            font-size: 1.75rem;
             margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
         }
 
         .name-block p {
-            margin: 4px 0 0;
-            font-size: 0.95rem;
+            margin: 6px 0 0;
+            font-size: 0.94rem;
             color: var(--text-muted);
+            font-weight: 400;
         }
 
         nav {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
         }
 
         nav a {
             text-decoration: none;
-            padding: 4px 10px;
+            padding: 5px 11px;
             border-radius: 999px;
             border: 1px solid var(--border-subtle);
             color: var(--text-muted);
             background: #f9fafb;
+            font-weight: 500;
+            transition: all 0.15s ease;
         }
 
         nav a:hover {
             border-color: var(--accent);
             color: var(--accent);
+            background: var(--accent-soft);
+            transform: translateY(-1px);
         }
 
         .contact-row {
@@ -93,13 +123,35 @@
             color: var(--text-muted);
         }
 
-        .contact-row a {
-            color: var(--accent);
-            text-decoration: none;
+        .contact-row span {
+            display: flex;
+            gap: 4px;
+            align-items: center;
         }
 
-        .contact-row a:hover {
-            text-decoration: underline;
+        .chip-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+
+        .chip-links a {
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border-subtle);
+            background: #f9fafb;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: all 0.15s ease;
+        }
+
+        .chip-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-soft);
+            transform: translateY(-1px);
         }
 
         main {
@@ -122,21 +174,28 @@
         .card {
             background: var(--card);
             border-radius: var(--radius-lg);
-            padding: 18px 20px 20px;
-            border: 1px solid var(--border-subtle);
+            padding: 22px 24px 24px;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
         }
 
         .card h2 {
-            font-size: 0.92rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-muted);
-            margin: 0 0 10px;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin: 0 0 14px;
+            font-weight: 600;
         }
 
         .summary-text {
-            font-size: 0.94rem;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            line-height: 1.65;
             color: var(--text-main);
         }
 
@@ -149,24 +208,29 @@
 
         .pill {
             font-size: 0.78rem;
-            padding: 4px 9px;
+            padding: 5px 10px;
             border-radius: 999px;
             border: 1px solid var(--border-subtle);
             background: #f9fafb;
             color: var(--text-muted);
             white-space: nowrap;
+            font-weight: 500;
         }
 
         .highlight {
             border-left: 3px solid var(--accent);
             padding-left: 10px;
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 0.88rem;
             color: var(--text-muted);
         }
 
+        .section-spacer {
+            margin-top: 16px;
+        }
+
         .exp-item {
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .exp-header {
@@ -196,10 +260,11 @@
 
         .exp-tags span {
             font-size: 0.75rem;
-            padding: 3px 7px;
+            padding: 4px 8px;
             border-radius: 999px;
-            background: #eff6ff;
-            color: #1d4ed8;
+            background: var(--accent-soft);
+            color: var(--accent-hover);
+            font-weight: 500;
         }
 
         .exp-points {
@@ -229,15 +294,31 @@
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin: 6px 0 0;
+            margin: 8px 0 0;
         }
 
         .badge {
             font-size: 0.78rem;
-            padding: 4px 8px;
+            padding: 5px 10px;
             border-radius: 999px;
             background: #ecfdf5;
             color: #047857;
+            font-weight: 600;
+        }
+
+        .skill-block {
+            font-size: 0.88rem;
+            margin-top: 6px;
+        }
+
+        .skill-block strong {
+            display: inline-block;
+            margin-bottom: 2px;
+        }
+
+        .edu-main {
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .edu-line {
@@ -247,7 +328,7 @@
         }
 
         footer {
-            margin-top: 20px;
+            margin-top: 22px;
             font-size: 0.8rem;
             color: var(--text-muted);
             text-align: center;
@@ -261,7 +342,7 @@
             <div class="top-row">
                 <div class="name-block">
                     <h1>Kummetha Sai Charan</h1>
-                    <p>AI Platforms & Automation · Product Manager · ex-SDE · IIT Kharagpur</p>
+                    <p>Product Manager · AI Platforms & Automation · IIT Kharagpur</p>
                 </div>
                 <nav>
                     <a href="#summary">Summary</a>
@@ -271,13 +352,16 @@
                 </nav>
             </div>
             <div class="contact-row">
-                <span>Bengaluru, India</span> ·
-                <a href="mailto:charan.arch@gmail.com">charan.arch@gmail.com</a> ·
-                <span>📞 +91-9491320891</span> ·
-                <!-- TODO: update these with your real URLs -->
-                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a> ·
-                <a href="https://your-blog-url.com" target="_blank" rel="noreferrer">Blog</a> ·
-                <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+                <span>Bengaluru, India</span>
+                <span>·</span>
+                <span><a href="mailto:charan.arch@gmail.com">charan.arch@gmail.com</a></span>
+                <span>·</span>
+            </div>
+            <div class="chip-links">
+                <a href="https://www.linkedin.com/in/sai-charan-k/" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://saicharankummetha.medium.com" target="_blank" rel="noreferrer">Blog</a>
+                <a href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://your-cv-link.com" target="_blank" rel="noreferrer">CV / Resume</a>
             </div>
         </header>
 
@@ -288,139 +372,209 @@
                     <h2>Summary</h2>
                     <p class="summary-text">
                         AI Platform Product Manager with 4.5+ years building agentic voice applications, LLM
-                        orchestration
-                        pipelines (STT → LLM → TTS), PromptOps platforms, evaluation frameworks, B2B SaaS and
-                        marketplace
-                        products. Ex-SDE with strong distributed systems background, now focused on shipping reliable,
-                        measurable AI products that move revenue, cost, and efficiency.
+                        orchestration pipelines
+                        (STT → LLM → TTS), PromptOps platforms, evaluation frameworks, B2B SaaS and marketplace
+                        products.
+                        Combines deep engineering expertise with product execution to ship reliable, scalable
+                        applications with
+                        measurable business impact.
                     </p>
                     <div class="pill-row">
                         <span class="pill">AI Voice Agents</span>
                         <span class="pill">LLM Orchestration</span>
                         <span class="pill">Agentic Workflows</span>
-                        <span class="pill">Internal Tools</span>
+                        <span class="pill">PromptOps Platforms</span>
                         <span class="pill">B2B Marketplaces</span>
                         <span class="pill">P2P Finance Systems</span>
                     </div>
                     <div class="highlight">
-                        Currently leading AI & Automation at Vegrow – from agentic calling and PromptOps to
-                        finance and marketplace workflows.
+                        Currently leading AI product strategy and execution at Vegrow across voice intelligence, supply
+                        &amp; sales
+                        intelligence, and finance systems.
                     </div>
                 </div>
 
-                <div class="card" id="experience" style="margin-top: 16px;">
+                <div class="card section-spacer" id="experience">
                     <h2>Experience</h2>
 
+                    <!-- PM – AI & Automation -->
                     <div class="exp-item">
                         <div class="exp-header">
                             <div>
-                                <div class="exp-title">Product Manager – AI & Automation · Vegrow</div>
-                                <div class="exp-meta">Bengaluru · Jul 2024 – Present</div>
+                                <div class="exp-title">Product Manager – AI &amp; Automation · Vegrow</div>
+                                <div class="exp-meta">Bengaluru, India · Jul 2024 – Present</div>
                             </div>
                         </div>
                         <div class="exp-tags">
                             <span>AI Voice Platform</span>
                             <span>Agentic Calling</span>
                             <span>STT → LLM → TTS</span>
+                            <span>API-first</span>
                         </div>
                         <ul class="exp-points">
                             <li>
                                 Built and scaled an agentic voice platform (VG Voice) powering profiling, NPS, slot
-                                booking,
-                                and ops workflows; automated 30K+ calls/month, reduced cost per completed workflow by
-                                ~60%
-                                and scaled volume 4×.
+                                booking, and ops workflows;
+                                automated 30K+ calls/month, reduced cost per completed workflow by ~60% and increased
+                                scale 4×.
                             </li>
                             <li>
-                                Owned the full AI product loop: persona & prompt design, fallbacks, knowledge base,
-                                tool/function calling, post-processing, dashboards, retraining signals and CI-based
-                                multi-agent evals to prevent regressions.
+                                Owned the full AI product loop: persona &amp; prompt design → fallbacks → knowledge base
+                                → tool/function calling
+                                → post-processing → dashboards → retraining signals.
+                            </li>
+                            <li>
+                                Developed an API-first platform to integrate with multiple products (CRM, LMS, ERPs)
+                                across diverse use cases.
                             </li>
                             <li>
                                 Architected real-time STT → LLM → TTS orchestration with streaming and interruption
-                                handling;
-                                achieved &lt;1.5s median latency and improved workflow completion from 40% → 65%.
+                                handling; achieved &lt;1.5s
+                                median response latency with clearer A/B-tested prompt variants, structured
+                                disambiguation, and interruption
+                                recovery, lifting workflow completion from 40% → 65%.
                             </li>
                             <li>
-                                Increased NPS from 30% → 65% via structured voice feedback, auto-summaries, sentiment
-                                tagging,
-                                issue categorisation, and closed-loop reporting to reduce churn.
+                                Improved feedback outcomes: increased NPS from 30% → 65% using structured voice
+                                feedback, auto-summaries,
+                                sentiment tagging, issue categorisation, and streamlined reporting with closed-loop
+                                ownership to reduce churn.
+                            </li>
+                            <li>
+                                Defined AI-specific north stars: funnel visibility, completion rate, extraction
+                                accuracy, latency, cost/call,
+                                transfer-to-human, repeat-call rate and satisfaction rate.
+                            </li>
+                            <li>
+                                Integrated multi-agent evaluation into CI/CD as a release gate to prevent regressions in
+                                extraction quality, UX,
+                                and latency before deployment.
                             </li>
                         </ul>
                     </div>
 
+                    <!-- PromptOps + Sales Intelligence + Integrations -->
                     <div class="exp-item">
                         <div class="exp-header">
                             <div>
-                                <div class="exp-title">PromptOps, Sales Intelligence & Integrations · Vegrow</div>
+                                <div class="exp-title">PromptOps Engine, Sales Intelligence &amp; Integrations · Vegrow
+                                </div>
                                 <div class="exp-meta">Product Manager – AI Platforms</div>
                             </div>
                         </div>
                         <div class="exp-tags">
                             <span>PromptOps</span>
                             <span>Eval Frameworks</span>
-                            <span>APIs & Integrations</span>
+                            <span>Sales Intelligence</span>
+                            <span>Integrations</span>
                         </div>
                         <ul class="exp-points">
                             <li>
-                                Built a centralized PromptOps system across 5+ GenAI apps (templates, variables,
-                                versioning,
-                                safe rollout); cut prompt iteration & deployment cycle time by ~2×.
+                                Built a centralized PromptOps system used across 5 GenAI applications (templates,
+                                variables, versioning,
+                                safe rollout mechanics); reduced iteration and deployment cycle time by ~2×.
                             </li>
                             <li>
-                                Launched AI-driven sales pitch intelligence to auto-score and coach sales calls,
-                                reducing manual
-                                QA effort by ~90%.
+                                Launched AI-driven sales pitch intelligence to automate scoring and coaching; reduced
+                                manual QA effort by ~90%
+                                and improved conversion predictability.
                             </li>
                             <li>
-                                Shipped business-critical integrations (telephony, finance, internal systems) with
-                                API-first
-                                design: auth, webhooks, retries, queuing and observability.
+                                Shipped multiple business-critical integrations (telephony, finance, internal systems)
+                                with API-first design:
+                                authentication, webhooks/events, retries, queuing and observability.
                             </li>
                         </ul>
                     </div>
 
+                    <!-- P2P Finance -->
                     <div class="exp-item">
                         <div class="exp-header">
                             <div>
-                                <div class="exp-title">P2P Finance & Marketplace Products · Vegrow</div>
-                                <div class="exp-meta">Product & Tech Lead</div>
+                                <div class="exp-title">Procure-to-Pay (P2P) – Business Finance Product · Vegrow</div>
+                                <div class="exp-meta">Product &amp; Tech Lead</div>
                             </div>
                         </div>
                         <div class="exp-tags">
                             <span>P2P Workflow</span>
-                            <span>B2B Marketplace</span>
-                            <span>OCR & Quality</span>
+                            <span>Finance Automation</span>
                         </div>
                         <ul class="exp-points">
                             <li>
-                                Shipped a PR → PO → GRN → Invoice → Payments MVP in 5 days; today processes ₹6
-                                Cr+/month,
-                                reducing approval TAT by ~40% and financial leakage by ~7.5%.
+                                Defined product scope for PR → PO → GRN → Invoice → Payments workflows; led a 5-day MVP
+                                build.
                             </li>
                             <li>
-                                Led the Vegrow FxS marketplace workflow product to support scale to ₹70 Cr+ GMV,
-                                reducing
-                                operational friction, improving visibility, and accelerating supplier payments.
-                            </li>
-                            <li>
-                                Deployed LLM-based OCR to process handwritten slips (~70% accuracy), boosting speed and
-                                reducing errors during peak operations; improved field execution by ~2.5×.
-                            </li>
-                            <li>
-                                Built Digital Quality Reports (DQR) – structured quality workflows across 50+ SKUs,
-                                saving
-                                ~1,000+ man-hours/month and seeding high-quality data for computer vision defect
-                                detection.
+                                Enabled ₹6 Cr+/month processing with automated workflows, reducing approval turnaround
+                                by ~40% and reducing
+                                financial leakage by ~7.5% via matching, validations and automated syncs to finance
+                                auditing tools.
                             </li>
                         </ul>
                     </div>
 
+                    <!-- B2B Marketplace (FxS) -->
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <div>
+                                <div class="exp-title">Vegrow FxS – B2B Marketplace Product · Vegrow</div>
+                                <div class="exp-meta">Product &amp; Tech Lead</div>
+                            </div>
+                        </div>
+                        <div class="exp-tags">
+                            <span>B2B Marketplace</span>
+                            <span>Ops Workflows</span>
+                            <span>OCR</span>
+                        </div>
+                        <ul class="exp-points">
+                            <li>
+                                Strategized and led a B2B marketplace workflow product that reduced operational friction
+                                and enabled scale to
+                                ₹70 Cr+ GMV, improving end-to-end visibility and accelerating supplier payments.
+                            </li>
+                            <li>
+                                Deployed LLM-based OCR for handwritten slips (~70% accuracy) to auto-populate records,
+                                boosting speed and
+                                reducing errors during peak operations; improved field execution by ~2.5× while avoiding
+                                linear headcount growth.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- DQR -->
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <div>
+                                <div class="exp-title">Digital Quality Reports (DQR) · Vegrow</div>
+                                <div class="exp-meta">Product &amp; Tech Lead</div>
+                            </div>
+                        </div>
+                        <div class="exp-tags">
+                            <span>Quality Workflows</span>
+                            <span>Data Foundations</span>
+                        </div>
+                        <ul class="exp-points">
+                            <li>
+                                Designed and launched a scalable quality assessment workflow product, enabling
+                                structured data capture and better
+                                customer-quality matching across 50+ SKUs; reduced operational effort by 1,000+
+                                man-hours/month through
+                                standardized flows and role-based review.
+                            </li>
+                            <li>
+                                Increased defect traceability via standardized tagging and metadata schema, creating a
+                                high-quality dataset that
+                                now powers computer vision–based defect detection (pilot).
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- SDE-II Vegrow -->
                     <div class="exp-item">
                         <div class="exp-header">
                             <div>
                                 <div class="exp-title">SDE-II (Tech Lead) · Vegrow</div>
-                                <div class="exp-meta">Bengaluru · Oct 2022 – Jun 2024</div>
+                                <div class="exp-meta">Bengaluru, India · Oct 2022 – Jun 2024</div>
                             </div>
                         </div>
                         <div class="exp-tags">
@@ -431,41 +585,68 @@
                         <ul class="exp-points">
                             <li>
                                 Progressed from SDE-I to leading an 8-member team during Vegrow’s scale-up from ₹100 Cr
-                                →
-                                ₹500 Cr+ revenue; drove inventory traceability microservices using Golang, Kafka,
-                                MongoDB,
-                                and QR-based flows for perishable goods.
+                                → ₹500 Cr+ revenue,
+                                contributing to both core tech and team leadership.
+                            </li>
+                            <li>
+                                Led development of inventory traceability microservices using Golang, Kafka, MongoDB,
+                                and QR-based flows for
+                                perishable goods tracking at scale; mentored engineers and championed a quality-focused
+                                culture.
                             </li>
                             <li>
                                 Shipped event-driven systems with strong reliability patterns (idempotency, retries,
-                                DLQs,
-                                observability) to support rapid scale-up and hypergrowth.
+                                DLQs, observability) to
+                                support hypergrowth.
                             </li>
                             <li>
                                 Built core platform services (auth/OTP, inventory state transitions, integrations,
-                                Computer Vision)
-                                and strengthened monitoring and incident hygiene.
+                                Computer Vision) and improved
+                                operational robustness through monitoring and incident hygiene.
                             </li>
                         </ul>
                     </div>
 
+                    <!-- LivSYT -->
                     <div class="exp-item">
                         <div class="exp-header">
                             <div>
                                 <div class="exp-title">Software Engineer · LivSYT</div>
-                                <div class="exp-meta">Hyderabad · May 2021 – Oct 2022</div>
+                                <div class="exp-meta">Hyderabad, India · May 2021 – Oct 2022</div>
                             </div>
                         </div>
                         <ul class="exp-points">
                             <li>
-                                Helped scale the project management SaaS from 0 → $0.5M ARR across India, USA &
-                                Singapore by
-                                building robust backend systems and manufacturing workflows.
+                                Helped scale the project management SaaS from 0 → $0.5M annual revenue by building
+                                robust backend systems and
+                                manufacturing workflows serving customers across India, USA &amp; Singapore.
                             </li>
                             <li>
-                                Designed event-driven notifications (AWS CloudWatch, Lambda, SES) and RBAC/auditing in
-                                PostgreSQL
-                                to improve engagement and data integrity.
+                                Designed event-driven notifications (AWS CloudWatch, Lambda, SES) to boost engagement
+                                and implemented RBAC/auditing
+                                in PostgreSQL to strengthen data integrity.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Arth Internship -->
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <div>
+                                <div class="exp-title">Computational Design Intern · Arth Design Build</div>
+                                <div class="exp-meta">Hyderabad, India · Jan 2020 – Jun 2020</div>
+                            </div>
+                        </div>
+                        <ul class="exp-points">
+                            <li>
+                                Worked in the R&amp;D team on computational design automation tools using generative
+                                design and multi-objective
+                                optimization (genetic algorithms) to create data-driven layouts.
+                            </li>
+                            <li>
+                                Demonstrated client-facing prototypes showcasing computational design’s potential for
+                                scalable, efficient project
+                                planning.
                             </li>
                         </ul>
                     </div>
@@ -476,72 +657,72 @@
             <section>
                 <div class="card" id="skills">
                     <h2>Skills</h2>
-                    <p style="font-size:0.88rem; margin-top:4px;">
+                    <div class="skill-block">
                         <strong>Product</strong><br />
                         Strategy, roadmapping, user research, UX flows, PRDs, metrics design, A/B testing,
-                        product lifecycle management, stakeholder alignment, Figma, Mixpanel.
-                    </p>
-                    <p style="font-size:0.88rem; margin-top:10px;">
-                        <strong>AI & Platforms</strong><br />
+                        product lifecycle management, stakeholder management, Figma, Mixpanel.
+                    </div>
+                    <div class="skill-block">
+                        <strong>AI</strong><br />
                         LLM orchestration, LangChain, LangGraph, RAG, Model Context Protocol (MCP),
                         model evaluation, STT/LLM/TTS pipelines, prompt design, n8n.
-                    </p>
-                    <p style="font-size:0.88rem; margin-top:10px;">
+                    </div>
+                    <div class="skill-block">
                         <strong>Engineering</strong><br />
                         Golang, Node.js, Python, Ruby on Rails, Kafka, Docker, Kubernetes, microservices,
                         MySQL, PostgreSQL, MongoDB, Pinecone.
-                    </p>
-                </div>
-
-                <div class="card" style="margin-top: 16px;">
-                    <h2>Education</h2>
-                    <div style="font-size:0.9rem; font-weight:600;">
-                        Bachelors (Honours), Architecture
                     </div>
-                    <div class="edu-line">
-                        Indian Institute of Technology Kharagpur · 2021
-                    </div>
-                    <div class="edu-line" style="margin-top:6px;">
-                        Undergrad thesis on acoustic-optimised spaces for performing arts using computational
-                        design and acoustic simulation; recognised as one of the top theses in the cohort.
-                    </div>
-                </div>
-
-                <div class="card" id="achievements" style="margin-top: 16px;">
-                    <h2>Highlights</h2>
-                    <ul class="side-list">
-                        <li>
-                            Excellence Award at Vegrow for building a scalable GenAI-powered NPS calling platform
-                            that reduced operational costs by ~35%.
-                        </li>
-                        <li>
-                            Invited to the Google Foobar Challenge for technical excellence and algorithmic
-                            problem-solving.
-                        </li>
-                        <li>
-                            Recognised with design/innovation awards (HHAC 2018, Arth Design Build 2017).
-                        </li>
-                        <li>
-                            Organised a company-wide Hackathon at Vegrow with ~95% participation to foster
-                            a culture of experimentation.
-                        </li>
-                    </ul>
                     <div class="badge-row">
                         <span class="badge">AI-native PM</span>
                         <span class="badge">Ex-SDE Tech Lead</span>
                         <span class="badge">0→1 Builder</span>
                     </div>
                 </div>
+
+                <div class="card section-spacer">
+                    <h2>Education</h2>
+                    <div class="edu-main">
+                        Bachelors (Honours), Architecture
+                    </div>
+                    <div class="edu-line">
+                        Indian Institute of Technology Kharagpur · 2021
+                    </div>
+                    <div class="edu-line">
+                        Undergrad thesis: acoustic-optimized spaces for performing arts using computational design
+                        and acoustic simulation principles; recognised as one of the top theses in the cohort.
+                    </div>
+                </div>
+
+                <div class="card section-spacer" id="achievements">
+                    <h2>Highlights</h2>
+                    <ul class="side-list">
+                        <li>
+                            Excellence Award at Vegrow for building a scalable GenAI-powered NPS AI calling platform
+                            that
+                            reduced operational costs by ~35%.
+                        </li>
+                        <li>
+                            Invited to the Google Foobar Challenge for technical excellence and algorithmic problem
+                            solving.
+                        </li>
+                        <li>
+                            Recognised for innovation with design awards (HHAC 2018, Arth Design Build 2017).
+                        </li>
+                        <li>
+                            Organised a company-wide Hackathon at Vegrow with ~95% participation to foster a culture of
+                            innovation and experimentation.
+                        </li>
+                    </ul>
+                </div>
             </section>
         </main>
 
         <footer>
-            © <span id="year"></span> Kummetha Sai Charan · Built as a minimal, fast personal page.
+            © <span id="year"></span> Kummetha Sai Charan · Minimal, fast personal page.
         </footer>
     </div>
 
     <script>
-        // Set current year in footer
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
